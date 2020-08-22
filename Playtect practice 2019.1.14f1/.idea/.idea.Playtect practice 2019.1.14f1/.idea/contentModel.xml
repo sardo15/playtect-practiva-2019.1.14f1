@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\zanah\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\zanah\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Playtect practice 2019.1.14f1.1226492815.00" t="ExcludeRecursive" />
+    <e p="C:\Users\zanah\Documents\GameDev\playtect-practiva-2019.1.14f1\Playtect practice 2019.1.14f1" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="AnswerCreatorEditor.cs" t="Include" />
+          <e p="DialoguesCreatorEditor.cs" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Demigiant" t="Include">
+            <e p="DOTween" t="Include">
+              <e p="Modules" t="Include">
+                <e p="DOTweenModuleAudio.cs" t="Include" />
+                <e p="DOTweenModulePhysics.cs" t="Include" />
+                <e p="DOTweenModulePhysics2D.cs" t="Include" />
+                <e p="DOTweenModuleSprite.cs" t="Include" />
+                <e p="DOTweenModuleUI.cs" t="Include" />
+                <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+                <e p="DOTweenModuleUtils.cs" t="Include" />
+              </e>
+              <e p="readme.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Controllers" t="Include">
+            <e p="DialogueEvent.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
+            <e p="ToggleScript.cs" t="Include" />
+          </e>
+          <e p="JsonCreator" t="Include">
+            <e p="AnswerCreator.cs" t="Include" />
+            <e p="DialoguesCreator.cs" t="Include" />
+          </e>
+          <e p="Screens" t="Include">
+            <e p="CongratulationModalUIScreen.cs" t="Include" />
+            <e p="DialogueManUIScreen.cs" t="Include" />
+            <e p="Flame1State.cs" t="Include" />
+            <e p="Flame1UIScreen.cs" t="Include" />
+            <e p="Flame2State.cs" t="Include" />
+            <e p="Flame2UIScreen.cs" t="Include" />
+            <e p="HowGoingToLearnUIScreen.cs" t="Include" />
+            <e p="ModalUIScreen.cs" t="Include" />
+            <e p="Question1UIScreen.cs" t="Include" />
+            <e p="Question2UIScreen.cs" t="Include" />
+            <e p="Question3UIScreen.cs" t="Include" />
+            <e p="Question4UIScreen.cs" t="Include" />
+            <e p="Question5UIScreen.cs" t="Include" />
+            <e p="UIScreen.cs" t="Include" />
+            <e p="WelcomeUIScreen.cs" t="Include" />
+            <e p="WhatGoingToLearnUIScreen.cs" t="Include" />
+            <e p="YouDoNeedUIScreen.cs" t="Include" />
+          </e>
+          <e p="StatePattern" t="Include">
+            <e p="StateMachine.cs" t="Include" />
+          </e>
+          <e p="States" t="Include">
+            <e p="CongratulationModalState.cs" t="Include" />
+            <e p="HowGoingToLearnState.cs" t="Include" />
+            <e p="ModalState.cs" t="Include" />
+            <e p="Question1State.cs" t="Include" />
+            <e p="Question2State.cs" t="Include" />
+            <e p="Question3State.cs" t="Include" />
+            <e p="Question4State.cs" t="Include" />
+            <e p="Question5State.cs" t="Include" />
+            <e p="State.cs" t="Include" />
+            <e p="WelcomeState.cs" t="Include" />
+            <e p="WhatGoingToLearnState.cs" t="Include" />
+            <e p="YouDoNeedState.cs" t="Include" />
+          </e>
+          <e p="Static" t="Include">
+            <e p="ColorHex.cs" t="Include" />
+            <e p="LoadFileJson.cs" t="Include" />
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Playtect practice 2019.1.14f1.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
