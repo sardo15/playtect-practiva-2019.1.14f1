@@ -54,4 +54,34 @@ public static class LoadFileJson
         var newJson = JsonUtility.ToJson(answerGroup);
         File.WriteAllText(Application.dataPath + "/Json/answerFile.json", newJson);
     }
+
+    public static bool IsCorrectAnswerResult(string key)
+    {
+        var json = File.ReadAllText(Application.dataPath + "/Json/answerFile.json");
+        var answerGroup = JsonUtility.FromJson<AnswerGroup>(json);
+
+        foreach (var answers in answerGroup.answers)
+        {
+            if (answers.key == key)
+            {
+                return answers.isCorrect;
+            }
+        }
+
+        return false;
+    }
+
+    public static void ResetAnswerResult()
+    {
+        var json = File.ReadAllText(Application.dataPath + "/Json/answerFile.json");
+        var answerGroup = JsonUtility.FromJson<AnswerGroup>(json);
+
+        foreach (var answers in answerGroup.answers)
+        {
+            answers.isCorrect = false;
+        }
+        
+        var newJson = JsonUtility.ToJson(answerGroup);
+        File.WriteAllText(Application.dataPath + "/Json/answerFile.json", newJson);
+    }
 }

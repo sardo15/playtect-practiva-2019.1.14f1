@@ -7,7 +7,7 @@ namespace Screens
     // Este código solo anima las imagenes del panel de "que necesitas"
     public class YouDoNeedUIScreen : UIScreen
     {
-        [Header("screen")]
+        [Header("Screen")]
         public GameObject screen;
         
         [Header("Dialogue box")]
@@ -78,7 +78,7 @@ namespace Screens
             finalPuzzleRectTransform.DOAnchorPosY(450f, duration).SetDelay(.25f).OnComplete(() =>
             {
                 questionDialogue.EmptyTextField();
-                gameObject.SetActive(false);
+                screen.SetActive(false);
             });
         }
     }

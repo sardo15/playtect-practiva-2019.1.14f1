@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,6 +6,7 @@ public class Answer
 {
     public string key;
     public string answer;
+    public bool isMedal;
     public bool isCorrect;
 }
 
@@ -20,6 +19,11 @@ public class AnswerGroup
 public class AnswerCreator : MonoBehaviour
 {
     public AnswerGroup answerGroup;
+
+    private void Awake()
+    {
+        LoadFileJson.ResetAnswerResult();
+    }
 
     public void SaveToJson()
     {

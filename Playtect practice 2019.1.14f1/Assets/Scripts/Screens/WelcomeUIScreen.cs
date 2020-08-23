@@ -8,6 +8,9 @@ namespace Screens
     // Este código solo anima las imagenes del panel de bienvenida
     public class WelcomeUIScreen : UIScreen
     {
+        [Header("Screen")]
+        public GameObject screen;
+        
         [Header("Man Animator")]
         public Animator animator;
     
@@ -111,12 +114,9 @@ namespace Screens
 
         private void ExitDialogueManInScene(float duration)
         {
-            // cambio del canal alpha de la imagen
             manBackground.DOFade(.8f, duration);
             manImage.DOFade(.8f, duration);
-            // cambio de escala
             dialogueMan.DOScale(.7f, duration);
-            // cambio de posición
             dialogueMan.DOAnchorPosY(109f, duration).OnComplete(() =>
             {
                 manBackground.DOFade(.4f, duration);
@@ -138,16 +138,12 @@ namespace Screens
 
         private void EnterLogoInScene(float duration)
         {
-            // cambio de rotación
             logo.DORotate(new Vector3(0, 0, -12.28f), duration).OnComplete(() =>
             {
                 logo.DORotate(new Vector3(0, 0, 0), duration);
             });
             
-            // cambio de scala
             logo.DOScale(.47f, 0f).OnComplete(() => { logo.DOScale(1, duration * 2f); });
-            
-            // cambio de posición
             logo.DOAnchorPos(new Vector2(-431f, 350f), duration * 2).OnComplete(StartSecondDialogue);
         }
 
@@ -155,7 +151,6 @@ namespace Screens
         {
             var duration = .25f;
             
-            // ingreso del segundo dialogo
             secondBoxDialogue.DOScale(.6f , 0f).OnComplete(() =>
             {
                 secondDialogueText.DOFade(1f, duration);
@@ -175,20 +170,20 @@ namespace Screens
         
             var duration = .25f;
         
-            // salida del segundo dialogo
+            // exit dialogue
             secondDialogueText.DOFade(0f, duration);
             secondBoxDialogue.DOScale(.6f, duration);
             secondBoxDialogue.DOAnchorPosY(450f, duration);
             secondBoxDialogue.DOScale(.6f, duration);
-            // salida del icono del hombre que habla
+            
+            // exit man
             manBackground.DOFade(.4f, duration);
             manImage.DOFade(.4f, duration);
             dialogueMan.DOScale(.19f, duration);
             dialogueMan.DOAnchorPosY(450f, duration).OnComplete(() =>
             {
-                // se ejecuta 
                 _callback?.Invoke();
-                gameObject.SetActive(false);
+                screen.SetActive(false);
             });
         }
     }

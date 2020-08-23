@@ -8,7 +8,7 @@ namespace Screens
     // Este código solo anima las imagenes del panel de bienvenida
     public class WhatGoingToLearnUIScreen : UIScreen
     {
-        [Header("screen")]
+        [Header("Screen")]
         public GameObject screen;
         
         [Header("Woman Animator")]
@@ -146,7 +146,7 @@ namespace Screens
                 background.DOFade(0f, duration * 2f);
                 woman.DOFade(0f, duration * 2f).OnComplete(() =>
                 {
-                    gameObject.SetActive(false);
+                    screen.SetActive(false);
                 });
             });
         }

@@ -31,6 +31,9 @@ namespace Screens
     
         public TextMeshProUGUI boxRedHatText;
         public TextMeshProUGUI boxYellowHatText;
+
+        [Header("Input")]
+        public TMP_InputField inputField;
     
         [Header("Dialogue box")]
         public DialogueEvent attentionDialogue;
@@ -40,7 +43,7 @@ namespace Screens
         private Dialogue _questionDialogue;
     
         private CallbackScreen _callback;
-    
+
         public override void Initialization(CallbackScreen callback)
         {
             _callback = callback;
@@ -62,7 +65,7 @@ namespace Screens
             attentionText.DOFade(0f, 0f);
             questionText.DOFade(0f, 0f);
         
-            answerBox.DOScale(0.33f, 0f);
+            answerBox.DOScale(0f, 0f);
             answerBoxImage.DOFade(0f, 0f);
             
             boxRedHat.DOFade(0f, 0f);
@@ -80,6 +83,8 @@ namespace Screens
         {
             var duration = .25f;
             var delay = 1f;
+
+            inputField.text = "";
             
             attentionDialogue.SetSentence(_attentionDialogue.sentences[0]);
             questionDialogue.SetSentence(_questionDialogue.sentences[0]);
@@ -95,7 +100,7 @@ namespace Screens
                     {
                         input.SetActive(true);
                         inputFull.SetActive(true);
-                        StartCoroutine(WaitToActiveNextButton(3f));
+                        StartCoroutine(WaitToActiveNextButton(2f));
                     });
                 });
             });

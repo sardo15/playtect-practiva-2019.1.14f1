@@ -34,6 +34,7 @@
             <e p="GameController.cs" t="Include" />
             <e p="ToggleScript.cs" t="Include" />
           </e>
+          <e p="DisableObject.cs" t="Include" />
           <e p="JsonCreator" t="Include">
             <e p="AnswerCreator.cs" t="Include" />
             <e p="DialoguesCreator.cs" t="Include" />

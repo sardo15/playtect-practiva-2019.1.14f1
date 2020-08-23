@@ -8,6 +8,9 @@ namespace Screens
     // Este código solo anima las imagenes del panel de "modal de confirmación de querer avanzar"
     public class ModalUIScreen : UIScreen
     {
+        [Header("Screen")]
+        public GameObject screen;
+        
         [Header("Tween elements")]
         public Image panelBackground;
         public Image modalBase;
@@ -33,6 +36,8 @@ namespace Screens
 
         public override void EnterAnimation()
         {
+            screen.SetActive(true);
+            
             var duration = .75f;
         
             panelBackground.DOFade(.2f, duration);
@@ -49,7 +54,7 @@ namespace Screens
             titleModal.DOFade(0f, duration).OnComplete(() =>
             {
                 _callback?.Invoke();
-                gameObject.SetActive(false);
+                screen.SetActive(false);
             });
         }
     }

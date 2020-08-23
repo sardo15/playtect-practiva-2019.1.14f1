@@ -9,6 +9,9 @@ namespace Screens
     // Este código solo anima las imagenes del panel de "primera pregunta"
     public class Question1UIScreen : UIScreen
     {
+        [Header("Screen")]
+        public GameObject screen;
+        
         [Header("Game Objects")]
         public GameObject input;
         public GameObject nextButton;
@@ -58,7 +61,7 @@ namespace Screens
             attentionText.DOFade(0f, 0f);
             questionText.DOFade(0f, 0f);
 
-            answerBox.DOScale(0.33f, 0f);
+            answerBox.DOScale(0f, 0f);
             answerBoxImage.DOFade(0f, 0f);
             
             boxRedHat.DOFade(0f, 0f);
@@ -72,6 +75,8 @@ namespace Screens
 
         public override void EnterAnimation()
         {
+            screen.SetActive(true);
+            
             var duration = .25f;
             var delay = 1f;
             
@@ -88,7 +93,7 @@ namespace Screens
                     questionDialogue.StartDialogue(_questionDialogue, () =>
                     {
                         input.SetActive(true);
-                        StartCoroutine(WaitToActiveNextButton(3f));
+                        StartCoroutine(WaitToActiveNextButton(2f));
                     });
                 });
             });

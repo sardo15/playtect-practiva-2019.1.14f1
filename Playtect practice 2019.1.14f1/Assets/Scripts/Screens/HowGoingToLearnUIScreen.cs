@@ -8,7 +8,7 @@ namespace Screens
     // Este código solo anima las imagenes del panel de "que vamos a aprender"
     public class HowGoingToLearnUIScreen : UIScreen
     {
-        [Header("screen")]
+        [Header("Screen")]
         public GameObject screen;
         
         [Header("Tween elements")]
@@ -133,7 +133,10 @@ namespace Screens
             labelYellowHat.DOFade(0f, duration);
 
             boxRedHatText.DOFade(0f, duration);
-            boxYellowHatText.DOFade(0f, duration);
+            boxYellowHatText.DOFade(0f, duration).OnComplete(() =>
+            {
+                screen.SetActive(false);
+            });
         }
 
         public override void ExitAnimation()

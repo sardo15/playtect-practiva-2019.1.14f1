@@ -994,12 +994,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809dfe68fea0413f9b5d79370aff77e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 1614124543}
   panelBackground: {fileID: 1614124545}
   flag: {fileID: 149678184}
   medal: {fileID: 1275716023}
   titleModal: {fileID: 691882995}
   textModal: {fileID: 1971862429}
-  nextButton: {fileID: 0}
+  nextButton: {fileID: 301403133}
 --- !u!1 &149678182
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,7 +1613,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 301403133}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1638,7 +1639,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: c475892f937fdc7469642ee37c7c7fcf, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -2222,7 +2223,6 @@ GameObject:
   - component: {fileID: 373935269}
   - component: {fileID: 373935271}
   - component: {fileID: 373935270}
-  - component: {fileID: 373935272}
   m_Layer: 5
   m_Name: 7_ModalconfirmationScreen
   m_TagString: Untagged
@@ -2287,21 +2287,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373935268}
   m_CullTransparentMesh: 0
---- !u!114 &373935272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373935268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ecb919399644abdbb087f26f68aa210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panelBackground: {fileID: 0}
-  modalBase: {fileID: 0}
-  titleModal: {fileID: 0}
 --- !u!1001 &378801270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2833,7 +2818,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477082495}
-  - component: {fileID: 477082496}
   m_Layer: 5
   m_Name: 4_HowGoingToLearnScreen
   m_TagString: Untagged
@@ -2863,14 +2847,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &477082496
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 477082494}
-  m_CullTransparentMesh: 0
 --- !u!1 &492801132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,12 +3495,15 @@ MonoBehaviour:
     answers:
     - key: question0
       answer: Comparando cantidades
+      isMedal: 0
       isCorrect: 0
     - key: question1
       answer: 12
+      isMedal: 1
       isCorrect: 0
     - key: question2
       answer: 16
+      isMedal: 1
       isCorrect: 0
 --- !u!4 &681095295
 Transform:
@@ -4430,7 +4409,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278202472
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5026,7 +5005,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0395eb998adb50042be2de99c121c524, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f302155816136f4d8a8e22b20a267aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5102,8 +5081,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c475892f937fdc7469642ee37c7c7fcf, type: 2}
+  m_sharedMaterial: {fileID: 7382867834913406118, guid: c475892f937fdc7469642ee37c7c7fcf,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6525,6 +6505,7 @@ MonoBehaviour:
   questionText: {fileID: 726617528}
   boxRedHatText: {fileID: 1929285851}
   boxYellowHatText: {fileID: 188162280}
+  inputField: {fileID: 192783135}
   attentionDialogue: {fileID: 1167774674}
   questionDialogue: {fileID: 1220672575}
 --- !u!1 &1014560761
@@ -7162,6 +7143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ecb919399644abdbb087f26f68aa210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 373935268}
   panelBackground: {fileID: 373935270}
   modalBase: {fileID: 2007522449}
   titleModal: {fileID: 134101054}
@@ -7410,7 +7392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b3e5e7f5b17db418e157827b1cc0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cadenceForLetter: 0.09
+  cadenceForLetter: 0.05
   cadenceForSequence: 0.25
   colorFade: {r: 0.9607843, g: 0.49411765, b: 0.07450981, a: 1}
   sequenceText: {fileID: 988516133}
@@ -8286,6 +8268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fa0d157ce68ad47b926a9c370ebd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 1604880381}
   input: {fileID: 1778885789}
   nextButton: {fileID: 301403133}
   answerBox: {fileID: 1088424709}
@@ -9036,6 +9019,7 @@ GameObject:
   - component: {fileID: 1537875418}
   - component: {fileID: 1537875417}
   - component: {fileID: 1537875419}
+  - component: {fileID: 1537875420}
   m_Layer: 5
   m_Name: InputFull
   m_TagString: Untagged
@@ -9118,6 +9102,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1537875420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537875415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106216009a207774bacb3f773a01e43d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1554761196
 GameObject:
   m_ObjectHideFlags: 0
@@ -10556,6 +10552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff22cbb5a9c43919cd5f6e7094e846b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 1164296431}
   animator: {fileID: 1065484871}
   dialogueMan: {fileID: 113730807}
   secondBoxDialogue: {fileID: 173086293}
@@ -10696,7 +10693,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 301403133}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -10722,7 +10719,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: c475892f937fdc7469642ee37c7c7fcf, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
@@ -11384,7 +11381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.29803923}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12540,6 +12537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aeba8b4c5bbe97439ae39b9e3f8e46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screen: {fileID: 1876066915}
   flame: {fileID: 1404918038}
   nextButton: {fileID: 301403133}
   panelBackground: {fileID: 1876066917}

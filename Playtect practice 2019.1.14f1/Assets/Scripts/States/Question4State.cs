@@ -20,5 +20,6 @@ public class Question4State : State
     {
         base.Exit();
         UIScreen.ExitAnimation();
+        Controller.nextButton.gameObject.SetActive(false);
     }
 }

@@ -47,7 +47,7 @@ namespace Screens
         {
             questionText.DOFade(0f, 0f);
         
-            answerBox.DOScale(0.33f, 0f);
+            answerBox.DOScale(0f, 0f);
             answerBoxImage.DOFade(0f, 0f);
         
             inputFull.SetActive(false);

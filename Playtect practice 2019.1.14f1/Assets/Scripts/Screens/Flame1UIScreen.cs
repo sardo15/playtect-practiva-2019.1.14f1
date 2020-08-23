@@ -8,6 +8,9 @@ namespace Screens
     // Este código solo anima las imagenes del panel de "primera respuesta de la flamita pregunta"
     public class Flame1UIScreen : UIScreen
     {
+        [Header("Screen")]
+        public GameObject screen;
+        
         [Header("Game Objects")]
         public GameObject flame;
         public GameObject nextButton;
@@ -56,6 +59,8 @@ namespace Screens
         {
             var duration = .25f;
             
+            screen.SetActive(true);
+            
             dialogue.SetSentence(_dialogue.sentences[0]);
         
             flame.SetActive(false);
@@ -85,7 +90,7 @@ namespace Screens
             dialogueText.DOFade(0f, duration);
             bigFlameImage.DOFade(0f, duration).OnComplete(() =>
             {
-                gameObject.SetActive(false);
+                screen.SetActive(false);
             });
         }
 
