@@ -1,25 +1,27 @@
 ﻿using Controllers;
 using StatePattern;
-using States;
 
-public class Question4State : State
+namespace States
 {
-    public Question4State(GameController controller, StateMachine stateMachine, UIScreen uiScreen) : base(controller, stateMachine, uiScreen)
+    public class Question4State : State
     {
-        this.UIScreen.Initialization(null);
-    }
+        public Question4State(GameController controller, StateMachine stateMachine, UIScreen uiScreen) : base(controller, stateMachine, uiScreen)
+        {
+            this.UIScreen.Initialization(null);
+        }
     
-    public override void Enter()
-    {
-        base.Enter();
-        UIScreen.gameObject.SetActive(true);
-        UIScreen.EnterAnimation();
-    }
+        public override void Enter()
+        {
+            base.Enter();
+            UIScreen.gameObject.SetActive(true);
+            UIScreen.EnterAnimation();
+        }
 
-    public override void Exit()
-    {
-        base.Exit();
-        UIScreen.ExitAnimation();
-        Controller.nextButton.gameObject.SetActive(false);
+        public override void Exit()
+        {
+            base.Exit();
+            UIScreen.ExitAnimation();
+            Controller.nextButton.gameObject.SetActive(false);
+        }
     }
 }

@@ -68,8 +68,8 @@ namespace Screens
                 questionDialogue.StartDialogue(_questionDialogue, () =>
                 {
                     input.SetActive(true);
-                    inputFull.SetActive(false);
-                    StartCoroutine(WaitToActiveNextButton(3f));
+                    inputFull.SetActive(true);
+                    StartCoroutine(WaitToActiveNextButton(2f));
                 });
             
             });

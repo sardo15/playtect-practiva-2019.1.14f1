@@ -84,4 +84,43 @@ public static class LoadFileJson
         var newJson = JsonUtility.ToJson(answerGroup);
         File.WriteAllText(Application.dataPath + "/Json/answerFile.json", newJson);
     }
+
+    public static int NumberOfCorrectAnswers()
+    {
+        var json = File.ReadAllText(Application.dataPath + "/Json/answerFile.json");
+        var answerGroup = JsonUtility.FromJson<AnswerGroup>(json);
+
+        var count = 0;
+        
+        foreach (var answers in answerGroup.answers)
+        {
+            if (answers.isMedal)
+            {
+                if (answers.isCorrect)
+                {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public static int TotalNumberOfAnswers()
+    {
+        var json = File.ReadAllText(Application.dataPath + "/Json/answerFile.json");
+        var answerGroup = JsonUtility.FromJson<AnswerGroup>(json);
+
+        var count = 0;
+        
+        foreach (var answers in answerGroup.answers)
+        {
+            if (answers.isMedal)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
 }

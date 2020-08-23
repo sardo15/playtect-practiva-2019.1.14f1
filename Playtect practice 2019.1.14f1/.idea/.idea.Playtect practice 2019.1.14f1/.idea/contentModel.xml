@@ -29,12 +29,15 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="ActivateGoButton.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="DialogueEvent.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
+            <e p="SceneController.cs" t="Include" />
             <e p="ToggleScript.cs" t="Include" />
           </e>
           <e p="DisableObject.cs" t="Include" />
+          <e p="FinalSequenceUIScreen.cs" t="Include" />
           <e p="JsonCreator" t="Include">
             <e p="AnswerCreator.cs" t="Include" />
             <e p="DialoguesCreator.cs" t="Include" />
@@ -53,6 +56,10 @@
             <e p="Question3UIScreen.cs" t="Include" />
             <e p="Question4UIScreen.cs" t="Include" />
             <e p="Question5UIScreen.cs" t="Include" />
+            <e p="Question6UIScreen.cs" t="Include" />
+            <e p="Question7UIScreen.cs" t="Include" />
+            <e p="Question8UIScreen.cs" t="Include" />
+            <e p="Question9UIScreen.cs" t="Include" />
             <e p="UIScreen.cs" t="Include" />
             <e p="WelcomeUIScreen.cs" t="Include" />
             <e p="WhatGoingToLearnUIScreen.cs" t="Include" />
@@ -63,6 +70,7 @@
           </e>
           <e p="States" t="Include">
             <e p="CongratulationModalState.cs" t="Include" />
+            <e p="FinalState.cs" t="Include" />
             <e p="HowGoingToLearnState.cs" t="Include" />
             <e p="ModalState.cs" t="Include" />
             <e p="Question1State.cs" t="Include" />
@@ -70,6 +78,10 @@
             <e p="Question3State.cs" t="Include" />
             <e p="Question4State.cs" t="Include" />
             <e p="Question5State.cs" t="Include" />
+            <e p="Question6State.cs" t="Include" />
+            <e p="Question7State.cs" t="Include" />
+            <e p="Question8State.cs" t="Include" />
+            <e p="Question9State.cs" t="Include" />
             <e p="State.cs" t="Include" />
             <e p="WelcomeState.cs" t="Include" />
             <e p="WhatGoingToLearnState.cs" t="Include" />

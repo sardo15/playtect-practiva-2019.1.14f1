@@ -21,7 +21,13 @@ namespace Controllers
         public Question2UIScreen question2UIScreen;
         public Question3UIScreen question3UIScreen;
         public Question4UIScreen question4UIScreen;
-        // public Question5UIScreen question5UIScreen;
+        public Question5UIScreen question5UIScreen;
+        public Question6UIScreen question6UIScreen;
+        public Question7UIScreen question7UIScreen;
+        public Question8UIScreen question8UIScreen;
+        public Question9UIScreen question9UIScreen;
+
+        public FinalSequenceUIScreen finalSequenceUIScreen;
     
         [Header("Flames UI Screen")]
         public Flame1UIScreen flame1UIScreen;
@@ -34,6 +40,12 @@ namespace Controllers
         [Header("Inputs form")]
         public TMP_InputField inputFieldText;
         public TMP_InputField inputFieldNumber;
+        public TMP_InputField inputFieldSubtraction;
+        public TMP_InputField inputFieldFinal;
+
+        [Header("Toggles red hat")]
+        public ToggleScript togglesRedHat;
+        public ToggleScript togglesYellowHat;
     
         [Header("Buttons")]
         public Button nextButton;
@@ -54,6 +66,12 @@ namespace Controllers
         [NonSerialized] public Question3State question3State;
         [NonSerialized] public Question4State question4State;
         [NonSerialized] public Question5State question5State;
+        [NonSerialized] public Question6State question6State;
+        [NonSerialized] public Question7State question7State;
+        [NonSerialized] public Question8State question8State;
+        [NonSerialized] public Question9State question9State;
+        
+        [NonSerialized] public FinalState finalState;
         
         // Flame Massage
         [NonSerialized] public Flame1State flame1State;
@@ -102,7 +120,13 @@ namespace Controllers
             question2State = new Question2State(this, _sequenceMachine, question2UIScreen);
             question3State = new Question3State(this, _sequenceMachine, question3UIScreen);
             question4State = new Question4State(this, _sequenceMachine, question4UIScreen);
-            // question5State = new Question5State(this, _sequenceMachine, question5UIScreen);
+            question5State = new Question5State(this, _sequenceMachine, question5UIScreen);
+            question6State = new Question6State(this, _sequenceMachine, question6UIScreen);
+            question7State = new Question7State(this, _sequenceMachine, question7UIScreen);
+            question8State = new Question8State(this, _sequenceMachine, question8UIScreen);
+            question9State = new Question9State(this, _sequenceMachine, question9UIScreen);
+            
+            finalState = new FinalState(this, _sequenceMachine, finalSequenceUIScreen);
         }
 
         private void SetFlameMassageStates()
@@ -177,6 +201,7 @@ namespace Controllers
             
             if (_sequenceMachine.CurrentState == question4State)
             {
+                CompareAnswerToQuestion("question3");
                 SavePreviousState(question4State);
                 _sequenceMachine.ChangeState(flame2State);
                 return;
@@ -185,14 +210,54 @@ namespace Controllers
             if (_sequenceMachine.CurrentState == flame2State)
             {
                 SavePreviousState(flame2State);
-                _sequenceMachine.ChangeState(question2State);
+                _sequenceMachine.ChangeState(question5State);
                 return;
             }
             
             if (_sequenceMachine.CurrentState == question5State)
             {
+                SetKeyAnswers("question4");
                 SavePreviousState(question5State);
-                _sequenceMachine.ChangeState(null);
+                _sequenceMachine.ChangeState(modalState);
+                return;
+            }
+            
+            if (_sequenceMachine.CurrentState == question6State)
+            {
+                SetKeyAnswers("question5");
+                SavePreviousState(question6State);
+                _sequenceMachine.ChangeState(modalState);
+                return;
+            }
+            
+            if (_sequenceMachine.CurrentState == question7State)
+            {
+                SetKeyAnswers("question6");
+                SavePreviousState(question7State);
+                _sequenceMachine.ChangeState(modalState);
+                return;
+            }
+            
+            if (_sequenceMachine.CurrentState == question8State)
+            {
+                SetKeyAnswers("question7");
+                SavePreviousState(question8State);
+                _sequenceMachine.ChangeState(modalState);
+                return;
+            }
+            
+            if (_sequenceMachine.CurrentState == question9State)
+            {
+                SetKeyAnswers("question8");
+                SavePreviousState(question9State);
+                _sequenceMachine.ChangeState(modalState);
+                return;
+            }
+            
+            if (_sequenceMachine.CurrentState == finalState)
+            {
+                finalSequenceUIScreen.FadeOffAllElements();
+                nextButton.gameObject.SetActive(false);
                 return;
             }
             
@@ -207,6 +272,9 @@ namespace Controllers
 
         private void AdvanceToNextSequenceState()
         {
+            _previousState.Exit();
+            nextButton.gameObject.SetActive(false);
+            
             if (_previousState == question2State)
             {
                 _sequenceMachine.ChangeState(question3State);
@@ -221,7 +289,37 @@ namespace Controllers
 
             if (_previousState == question4State)
             {
+                _sequenceMachine.ChangeState(question5State);
                 return;
+            }
+            
+            if (_previousState == question5State)
+            {
+                _sequenceMachine.ChangeState(question6State);
+                return;
+            }
+            
+            if (_previousState == question6State)
+            {
+                _sequenceMachine.ChangeState(question7State);
+                return;
+            }
+            
+            if (_previousState == question7State)
+            {
+                _sequenceMachine.ChangeState(question8State);
+                return;
+            }
+            
+            if (_previousState == question8State)
+            {
+                _sequenceMachine.ChangeState(question9State);
+                return;
+            }
+            
+            if (_previousState == question9State)
+            {
+                _sequenceMachine.ChangeState(finalState);
             }
         }
 
@@ -235,6 +333,7 @@ namespace Controllers
             if (inputFieldText.text == LoadFileJson.LoadAnswer(key).answer)
             {
                 LoadFileJson.SaveAnswerResult(key);
+                return;
             }
         }
 
@@ -280,6 +379,29 @@ namespace Controllers
         private void CompareAnswerToQuestionForMedal(string key)
         {
             if (inputFieldNumber.text == LoadFileJson.LoadAnswer(key).answer)
+            {
+                LoadFileJson.SaveAnswerResult(key);
+            }
+            
+            if ((togglesRedHat.value + 1).ToString() == LoadFileJson.LoadAnswer(key).answer)
+            {
+                LoadFileJson.SaveAnswerResult(key);
+                return;
+            }
+            
+            if ((togglesYellowHat.value + 1).ToString() == LoadFileJson.LoadAnswer(key).answer)
+            {
+                LoadFileJson.SaveAnswerResult(key);
+                return;
+            }
+            
+            if (inputFieldSubtraction.text == LoadFileJson.LoadAnswer(key).answer)
+            {
+                LoadFileJson.SaveAnswerResult(key);
+                return;
+            }
+            
+            if (inputFieldFinal.text == LoadFileJson.LoadAnswer(key).answer)
             {
                 LoadFileJson.SaveAnswerResult(key);
             }
